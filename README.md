@@ -2,8 +2,11 @@
 
 ## 学习连接
 [type-challenge github地址](https://github.com/type-challenges/type-challenges)
+
 [TypeScript 类型体操通关秘籍](https://juejin.cn/book/7047524421182947366)
+
 [Typescript官方文档](https://www.typescriptlang.org/docs/)
+
 [Typescript基础学习笔记](https://github.com/lin0606/note/blob/main/Typescript/base.md)
 
 ## 类型体操口诀(来自TypeScript 类型体操通关秘籍)
