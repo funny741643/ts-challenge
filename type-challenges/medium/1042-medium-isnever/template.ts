@@ -1,0 +1,1 @@
+type IsNever<T extends unknown> = [T] extends [never] ? true : false;
