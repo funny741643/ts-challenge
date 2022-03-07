@@ -110,4 +110,41 @@ type T1097_1 = IsUnion<string>  // false
     [O] 此时为 [string | number]
 
 3. 所以若[O] extends [T] 为 false, 证明其是联合类型， 否则则不是联合类型
- 
+
+## 重映射
+
+重映射就是在索引后面加一个as语句，表名索引转换成什么，它可以用来转换成什么，它可以用来对索引类型过滤和转换
+
+### 提取类型为string的索引
+
+```
+type FilterString<T> = {
+    [K in keyof T as T[K] extends string ? K : never]: T[K]
+}
+
+type person = {
+    name: 'guang',
+    age: 20,
+    gender: true
+}
+
+type ret = FilterString<person>
+
+Expect<Equal<FilterString<person>, { name: 'guang' }>>  // true
+```
+### 从对象类型中排除索引签名
+
+```
+type RemoveIndexSignature<T> = {
+    [K in keyof T as string extends K ? never : number extends K ? never : K]: T[K]
+}
+
+type Baz = {
+    [key: string]: any;
+    foo(): void;
+}
+
+type ret = RemoveIndexSignature<Baz>
+
+Expect<Equal<RemoveIndexSignature<Foo>, { foo(): void }>>  // true
+```
