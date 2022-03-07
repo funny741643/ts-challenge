@@ -148,3 +148,19 @@ type ret = RemoveIndexSignature<Baz>
 
 Expect<Equal<RemoveIndexSignature<Foo>, { foo(): void }>>  // true
 ```
+### 从T中选取一组类型可赋给U的属性。
+
+```
+type PickByType<T, U> = {
+    [K in keyof T as T[K] extends U ? K : never]: T[K]
+}
+
+interface Model {
+  name: string
+  count: number
+  isReadonly: boolean
+  isEnable: boolean
+}
+
+Expect<Equal<PickByType<Model, boolean>, { isReadonly: boolean; isEnable: boolean }>>   // true
+```
