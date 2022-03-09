@@ -1,1 +1,10 @@
-type TrimLeft<S extends string> = S extends `${' ' | '\t' | '\n'}${infer Rest}` ? TrimLeft<Rest> : S;
+import { Equal, Expect } from '@type-challenges/utils'
+
+type cases = [
+  Expect<Equal<TrimLeft<'str'>, 'str'>>,
+  Expect<Equal<TrimLeft<' str'>, 'str'>>,
+  Expect<Equal<TrimLeft<'     str'>, 'str'>>,
+  Expect<Equal<TrimLeft<'     str     '>, 'str     '>>,
+  Expect<Equal<TrimLeft<'   \n\t foo bar '>, 'foo bar '>>,
+]
+
