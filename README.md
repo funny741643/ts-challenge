@@ -17,3 +17,8 @@
 联合分散可简化，特殊特性要记清。
 
 基础扎实套路熟，类型体操可通关。
+
+## 手写Ts中的内置类型
+
+https://github.com/funny741643/ts-challenge/tree/main/type-built-in
+

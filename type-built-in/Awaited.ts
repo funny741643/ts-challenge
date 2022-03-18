@@ -1,4 +1,6 @@
-// 取Promise的ValueType的高级类型
+/**
+ * 取Promise的ValueType的高级类型
+ */
 
 type Awaited_in<T> = 
     T extends null | undefined
