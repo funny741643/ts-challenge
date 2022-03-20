@@ -17,3 +17,5 @@
 https://github.com/funny741643/ts-challenge/tree/main/type-built-in
 
 ## 用Ts进行相关函数的实现
+
+[事件总线，mitt源码阅读](https://github.com/funny741643/ts-challenge/tree/main/type-function/EventBus)
